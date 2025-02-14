@@ -39,7 +39,7 @@ public class UserService implements UserDetailsService {
         String sessionRole = authentication.getAuthorities().iterator().next().getAuthority();
 
         // 수직적으로 ADMIN 인 경우는 무조건 접근 가능
-        if (UserRoleType.ADMIN.name().equals(sessionRole)) {
+        if ("ROLE_ADMIN".equals(sessionRole)) {
             return true;
         }
 
